@@ -1,6 +1,7 @@
 const app = document.getElementById('app');
 const test = document.createElement("p");
 const usersContainer = document.createElement("div");
+usersContainer.id= 'userscont'
 app.appendChild(usersContainer)
 app.appendChild(test);
 let usersArray=[]
@@ -19,9 +20,11 @@ fetch('https://jsonplaceholder.typicode.com/users')
             ))
             usersList.forEach(element => {
                 var el = `
+                <div class="row">
                 <p>name: ${element.name}</p>
                 <p>phone: ${element.phone}</p>
                 <p>email: ${element.email}</p>
+                </div class="row">
                 `
                 usersContainer.innerHTML += el
             });
